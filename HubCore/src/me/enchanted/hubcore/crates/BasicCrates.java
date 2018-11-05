@@ -1,29 +1,19 @@
 package me.enchanted.hubcore.crates;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.BlockState;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.material.Chest;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import me.enchanted.hubcore.HubCore;
-import me.enchanted.hubcore.particles.FlameCircle;
-import me.enchanted.hubcore.particles.Music;
-import me.enchanted.hubcore.particles.Wings;
-import net.minecraft.server.v1_12_R1.EnumParticle;
-import net.minecraft.server.v1_12_R1.PacketPlayOutWorldParticles;
+import me.enchanted.hubcore.bungeecord.SendToBungeecord;
 
 public class BasicCrates {
 
@@ -32,6 +22,7 @@ public class BasicCrates {
 
 	@SuppressWarnings("deprecation")
 	public static void SpawnBasicCrate1(Player p) {
+		
 		CratesOpen.CrateOpen.add(p);
 		CratesOpen.CratesOpen.put(p, 5);
 

@@ -2,15 +2,21 @@ package me.enchanted.hubcore.particles;
 
 import org.bukkit.Location;
 import org.bukkit.Particle;
+import org.bukkit.craftbukkit.v1_12_R1.entity.CraftGuardian;
+import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
+import org.bukkit.entity.Guardian;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import me.enchanted.hubcore.HubCore;
+import net.minecraft.server.v1_12_R1.EntityGuardian;
+import net.minecraft.server.v1_12_R1.EntityPlayer;
 
 public class GreenHelix {
 
 	// Green Helix
 	public static void createGreenHelix(final Player p) {
+		
 		new BukkitRunnable() {
 			double phi = 0;
 
@@ -39,6 +45,7 @@ public class GreenHelix {
 
 			@Override
 			public void run() {
+
 				phi += Math.PI / 16;
 				double x;
 				double y;

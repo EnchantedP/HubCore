@@ -37,6 +37,11 @@ public class CrateGUI {
 		bscrateMeta.setDisplayName("§7Open Basic Crate");
 		List<String> bslore = new ArrayList<String>();
 		bslore.add("§7You Currently Have §a" + HubCore.getPlugin(HubCore.class).getConfig().getInt("crates." + p.getUniqueId().toString() + ".BasicCrates") + " §7Basic Crates!");
+		bslore.add("§9");
+		bslore.add("§9Craftable for §31000 §9Chest Pieces");
+		bslore.add("§8");
+		bslore.add("§aLeft-Click §8To Open.");
+		bslore.add("§aRight-Click §8To Buy."); 
 		bscrateMeta.setLore(bslore);
 		bscrate.setItemMeta(bscrateMeta);
 		
@@ -66,6 +71,12 @@ public class CrateGUI {
 		bscrateMeta.setDisplayName("§7Open Basic Crate");
 		List<String> bslore = new ArrayList<String>();
 		bslore.add("§7You Currently Have §a" + HubCore.getPlugin(HubCore.class).getConfig().getInt("crates." + p.getUniqueId().toString() + ".BasicCrates") + " §7Basic Crates!");
+		bslore.add("§9");
+		bslore.add("§9Craftable for §31000 §9Chest Pieces");
+		bslore.add("§8");
+		bslore.add("§aLeft-Click §8To Open.");
+		bslore.add("§aRight-Click §8To Buy."); 
+		
 		bscrateMeta.setLore(bslore);
 		bscrate.setItemMeta(bscrateMeta);
 		
@@ -93,6 +104,11 @@ public class CrateGUI {
 		bscrateMeta.setDisplayName("§7Open Basic Crate");
 		List<String> bslore = new ArrayList<String>();
 		bslore.add("§7You Currently Have §a" + HubCore.getPlugin(HubCore.class).getConfig().getInt("crates." + p.getUniqueId().toString() + ".BasicCrates") + " §7Basic Crates!");
+		bslore.add("§9");
+		bslore.add("§9Craftable for §31000 §9Chest Pieces");
+		bslore.add("§8");
+		bslore.add("§aLeft-Click §8To Open.");
+		bslore.add("§aRight-Click §8To Buy."); 
 		bscrateMeta.setLore(bslore);
 		bscrate.setItemMeta(bscrateMeta);
 		
@@ -120,6 +136,11 @@ public class CrateGUI {
 		bscrateMeta.setDisplayName("§7Open Basic Crate");
 		List<String> bslore = new ArrayList<String>();
 		bslore.add("§7You Currently Have §a" + HubCore.getPlugin(HubCore.class).getConfig().getInt("crates." + p.getUniqueId().toString() + ".BasicCrates") + " §7Basic Crates!");
+		bslore.add("§9");
+		bslore.add("§9Craftable for §31000 §9Chest Pieces");
+		bslore.add("§8");
+		bslore.add("§aLeft-Click §8To Open.");
+		bslore.add("§aRight-Click §8To Buy."); 
 		bscrateMeta.setLore(bslore);
 		bscrate.setItemMeta(bscrateMeta);
 		

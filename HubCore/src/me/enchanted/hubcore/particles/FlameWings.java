@@ -9,7 +9,7 @@ import org.bukkit.util.Vector;
 /**
 * Created by Kaaotha on 19.04.2016.
 */
-public class Wings  {
+public class FlameWings  {
 
     static boolean x = true;
     static boolean o = false;

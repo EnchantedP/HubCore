@@ -50,7 +50,7 @@ public class CratesOpen implements Listener {
 				Random rnd = new Random();
 				int rndInt = rnd.nextInt(100) + 1;
 
-				if (rndInt <= 7) {
+				if (rndInt == 1) {
 					List<String> lore = new ArrayList<>();
 
 					int rndLore = rnd.nextInt(10000) + 1;
@@ -120,7 +120,7 @@ public class CratesOpen implements Listener {
 								}
 							}, 2L);
 
-				} else if (rndInt > 7 && rndInt <= 8) {
+				} else if (rndInt == 2) {
 
 					List<String> lore = new ArrayList<>();
 
@@ -192,7 +192,124 @@ public class CratesOpen implements Listener {
 
 								}
 							}, 2L);
-				} else if (rndInt >= 9) {
+				} else if (rndInt == 3) {
+
+					List<String> lore = new ArrayList<>();
+
+					int rndLore = rnd.nextInt(10000) + 1;
+					lore.add("" + rndLore);
+
+					ItemStack is = new ItemStack(Material.BLAZE_POWDER);
+					ItemMeta im = is.getItemMeta();
+					is.setAmount(1);
+					im.setLore(lore);
+
+					Item item = e.getClickedBlock().getWorld()
+							.dropItem(e.getClickedBlock().getLocation().add(0.5, 0, 0.5), is);
+					item.setGravity(false);
+					item.setPickupDelay(Integer.MAX_VALUE);
+					item.setVelocity(new Vector(0, 0, 0));
+
+					ArmorStand aS = p.getWorld()
+							.spawn(new Location(p.getWorld(), e.getClickedBlock().getLocation().getX() + 0.5,
+									e.getClickedBlock().getLocation().getY() - 0.7,
+									e.getClickedBlock().getLocation().getZ() + 0.5), ArmorStand.class);
+					aS.setVisible(false);
+					aS.setGravity(false);
+					aS.setCustomName("§5§lFlame Wings");
+					aS.setCustomNameVisible(true);
+
+					FireworkEffect fe = FireworkEffect.builder().withColor(Color.ORANGE).withColor(Color.YELLOW)
+							.withFade(Color.ORANGE).with(FireworkEffect.Type.BALL_LARGE).trail(false).flicker(true)
+							.build();
+					FireworkEffect fe2 = FireworkEffect.builder().withColor(Color.ORANGE).withColor(Color.YELLOW)
+							.withFade(Color.ORANGE).with(FireworkEffect.Type.BALL_LARGE).trail(false).flicker(true)
+							.build();
+					FireworkEffect fe3 = FireworkEffect.builder().withColor(Color.ORANGE).withColor(Color.YELLOW)
+							.withFade(Color.ORANGE).with(FireworkEffect.Type.BALL_LARGE).trail(false).flicker(true)
+							.build();
+					instantFirework(e.getClickedBlock().getLocation(), fe);
+					instantFirework(e.getClickedBlock().getLocation(), fe2);
+					instantFirework(e.getClickedBlock().getLocation(), fe3);
+					Bukkit.getScheduler().scheduleSyncDelayedTask(HubCore.getPlugin(HubCore.class),
+							new BukkitRunnable() {
+
+								@Override
+								public void run() {
+									instantFirework(e.getClickedBlock().getLocation(), fe);
+									instantFirework(e.getClickedBlock().getLocation(), fe2);
+									instantFirework(e.getClickedBlock().getLocation(), fe3);
+
+								}
+							}, 2L);
+					Bukkit.getScheduler().scheduleSyncDelayedTask(HubCore.getPlugin(HubCore.class),
+							new BukkitRunnable() {
+
+								@Override
+								public void run() {
+									instantFirework(e.getClickedBlock().getLocation(), fe);
+									instantFirework(e.getClickedBlock().getLocation(), fe2);
+									instantFirework(e.getClickedBlock().getLocation(), fe3);
+
+								}
+							}, 2L);
+					Bukkit.getScheduler().scheduleSyncDelayedTask(HubCore.getPlugin(HubCore.class),
+							new BukkitRunnable() {
+
+								@Override
+								public void run() {
+									instantFirework(e.getClickedBlock().getLocation(), fe);
+									instantFirework(e.getClickedBlock().getLocation(), fe2);
+									instantFirework(e.getClickedBlock().getLocation(), fe3);
+
+								}
+							}, 2L);
+				} else if (rndInt >= 4 && rndInt <= 60) {
+					int rndPieces = rnd.nextInt(200) + 50;
+					List<String> lore = new ArrayList<>();
+
+					int rndLore = rnd.nextInt(10000) + 1;
+					lore.add("" + rndLore);
+
+					ItemStack is = new ItemStack(Material.PRISMARINE_SHARD);
+					ItemMeta im = is.getItemMeta();
+					is.setAmount(1);
+					im.setLore(lore);
+
+					Item item = e.getClickedBlock().getWorld()
+							.dropItem(e.getClickedBlock().getLocation().add(0.5, 0, 0.5), is);
+					item.setGravity(false);
+					item.setPickupDelay(Integer.MAX_VALUE);
+					item.setVelocity(new Vector(0, 0, 0));
+
+					
+					ArmorStand aS1 = p.getWorld()
+							.spawn(new Location(p.getWorld(), e.getClickedBlock().getLocation().getX() + 0.5,
+									e.getClickedBlock().getLocation().getY() - 0.9,
+									e.getClickedBlock().getLocation().getZ() + 0.5), ArmorStand.class);
+					aS1.setVisible(false);
+					aS1.setGravity(false);
+					aS1.setCustomName("§b" + rndPieces);
+					aS1.setCustomNameVisible(true);
+					
+					
+					ArmorStand aS2 = p.getWorld()
+							.spawn(new Location(p.getWorld(), e.getClickedBlock().getLocation().getX() + 0.5,
+									e.getClickedBlock().getLocation().getY() - 0.7,
+									e.getClickedBlock().getLocation().getZ() + 0.5), ArmorStand.class);
+					aS2.setVisible(false);
+					aS2.setGravity(false);
+					aS2.setCustomName("§9§lCrate Pieces");
+					aS2.setCustomNameVisible(true);
+					
+					
+					int cratePieces = HubCore.getPlugin(HubCore.class).getConfig()
+							.getInt("crates." + p.getUniqueId().toString() + ".cratePieces");
+					int newCratePieces = cratePieces + rndPieces;
+					HubCore.getPlugin(HubCore.class).getConfig()
+							.set("crates." + p.getUniqueId().toString() + ".cratePieces", newCratePieces);
+					HubCore.getPlugin(HubCore.class).saveConfig();
+				} else if (rndInt >= 61) {
 					List<String> lore = new ArrayList<>();
 
 					int rndLore = rnd.nextInt(10000) + 1;
@@ -228,7 +345,7 @@ public class CratesOpen implements Listener {
 					int newCratesOpened = CratesOpen.get(p) - toAdd;
 					CratesOpen.put(p, newCratesOpened);
 
-					p.sendMessage("§c" + CratesOpen.get(p) + "");
+					
 
 				}
 				if (CratesOpen.get(p).equals(1)) {

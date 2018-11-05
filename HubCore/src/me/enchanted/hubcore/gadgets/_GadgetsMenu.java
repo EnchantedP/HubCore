@@ -8,7 +8,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class GadgetsMenu {
+public class _GadgetsMenu {
 
 	public void GadgetsInv(Player p){
 		Inventory inv = Bukkit.createInventory(null, 54, "§bGadgets");

@@ -1,21 +1,42 @@
 package me.enchanted.hubcore.crates;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Cow;
+import org.bukkit.entity.Creature;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.scheduler.BukkitRunnable;
+
+import me.enchanted.hubcore.HubCore;
 
 public class GiveCrateCommand implements CommandExecutor {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
 	{
+		
 		if(sender instanceof Player)
 		{
 			Player p = (Player) sender;
+			Creature cow = (Creature) Bukkit.getWorld("world").spawnEntity(p.getLocation(), EntityType.COW);
+			new BukkitRunnable() {
+				
+				@Override
+				public void run() {
+					
+					cow.setLeashHolder(p);
+					cow.getLeashHolder().
+					
+				}
+			}.runTaskTimer(HubCore.getPlugin(HubCore.class), 0, 1);
+			
+			
 			if(p.hasPermission("enchanted.givecrate"))
 			{
 				if(args.length != 1)

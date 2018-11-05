@@ -5,9 +5,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class GadgetsClick implements Listener {
+public class _GadgetsClick implements Listener {
 	
-	public GadgetsMenu gm = new GadgetsMenu();
+	public _GadgetsMenu gm = new _GadgetsMenu();
 	
 	@SuppressWarnings("deprecation")
 	@EventHandler
