@@ -25,7 +25,7 @@ public class WolfTail {
             {o, o, o, o, o, o, x, x, x, x, o, x, o, o, o, o},
             {o, o, o, o, o, o, o, x, x, x, x, x, o, o, o, o},
             {o, o, o, o, o, o, o, o, x, x, x, o, o, o, o, o},
-            {o, o, o, o, o, o, o, o, o, o, o, o, o, o, o, o}
+            {o, o, o, o, o, o, o, o, o, o, o, o, o, o, o, o
     };
     
     public static void drawParticles(Location location) {
