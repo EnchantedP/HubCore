@@ -20,7 +20,7 @@ public class GunGadget implements Listener{
 			Snowball sb = p.getWorld().spawn(p.getLocation(), Snowball.class);
 			
 			Vector v = p.getLocation().getDirection();
-			sb.setVelocity(v.multiply(1.7));
+			sb.setVelocity(v.multiply(1.7)); 
 			
 		}
 	}

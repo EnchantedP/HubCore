@@ -39,7 +39,7 @@ public class HubCore extends JavaPlugin implements Listener {
 		registerListeners();
 		registerTimeLeft();
 		DailyRewards();
-		saveDefaultConfig();
+		saveDefaultConfig(); 
 		
 	}
 
