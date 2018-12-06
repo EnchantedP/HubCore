@@ -22,6 +22,7 @@ public class TNTGadgetsExplode implements Listener {
 			for (Entity near : Bukkit.getOnlinePlayers()) {
 				if (near.getLocation().distance(e.getEntity().getLocation()) <= 5) {
 					Location nearloc = near.getLocation();
+					
 					Location eLoc = e.getEntity().getLocation();
 					Location newLoc = nearloc.subtract(eLoc);
 					Vector newV = new Vector(newLoc.toVector().normalize().multiply(2.0).getX(), 1.75, newLoc.toVector().normalize().multiply(2.0).getZ());

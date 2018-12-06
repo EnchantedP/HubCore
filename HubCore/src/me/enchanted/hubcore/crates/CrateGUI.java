@@ -48,12 +48,13 @@ public class CrateGUI {
 		crateGUI.setItem(11, bscrate);
 		
 		p.openInventory(crateGUI);
-		
+		map.put(p, "§4§lCrate1");
 		
 	}
 	
 	public static void openCrate2(Player p)
 	{
+		
 		Inventory crateGUI = Bukkit.createInventory(null, 27, "§4§lCrate GUI§2");
 		
 		ItemStack glassPane = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 3);	
@@ -83,6 +84,7 @@ public class CrateGUI {
 		crateGUI.setItem(11, bscrate);
 		
 		p.openInventory(crateGUI);
+		map.put(p, "§4§lCrate2");
 	}
 	
 	public static void openCrate3(Player p)
@@ -115,6 +117,7 @@ public class CrateGUI {
 		crateGUI.setItem(11, bscrate);
 		
 		p.openInventory(crateGUI);
+		map.put(p, "§4§lCrate3");
 	}
 	
 	public static void openCrate4(Player p)
@@ -147,5 +150,6 @@ public class CrateGUI {
 		crateGUI.setItem(11, bscrate);
 		
 		p.openInventory(crateGUI);
+		map.put(p, "§4§lCrate4");
 	}
 }

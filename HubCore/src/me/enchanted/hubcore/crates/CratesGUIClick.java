@@ -35,23 +35,20 @@ public class CratesGUIClick implements Listener {
 							.getInt("crates." + p.getUniqueId() + ".BasicCrates") >= 1) {
 
 						InventoryHolder ih = OpenCratesGUI.ih1;
-						HubCore.getPlugin(HubCore.class).getLogger().info(ih.getClass().toString());
-						if (ih instanceof Chest) {
 
-							Location loc = ((Chest) ih).getLocation();
-							p.teleport(loc.add(0.5f, 0, 0.5f));
-							loc.getBlock().setType(Material.AIR);
-							BasicCrates.SpawnBasicCrate1(p);
-							e.setCancelled(true);
-							p.closeInventory();
+						Location loc = ((Chest) ih).getLocation();
+						p.teleport(loc.add(0.5f, 0, 0.5f));
+						loc.getBlock().setType(Material.AIR);
+						BasicCrates.SpawnBasicCrate1(p);
+						e.setCancelled(true);
+						p.closeInventory();
 
-							CrateGUI.map.put(p, "§4§lCrate1");
-							for (Player all : Bukkit.getOnlinePlayers()) {
-								all.closeInventory();
-							}
-
-							return;
+						CrateGUI.map.put(p, "§4§lCrate1");
+						for (Player all : Bukkit.getOnlinePlayers()) {
+							all.closeInventory();
 						}
+
+						return;
 					} else {
 						e.setCancelled(true);
 					}
@@ -75,22 +72,19 @@ public class CratesGUIClick implements Listener {
 							.getInt("crates." + p.getUniqueId() + ".BasicCrates") >= 1) {
 
 						InventoryHolder ih = OpenCratesGUI.ih2;
-						HubCore.getPlugin(HubCore.class).getLogger().info(ih.getClass().toString());
-						if (ih instanceof Chest) {
 
-							Location loc = ((Chest) ih).getLocation();
-							p.teleport(loc.add(0.5f, 0, 0.5f));
-							loc.getBlock().setType(Material.AIR);
-							BasicCrates.SpawnBasicCrate2(p);
-							e.setCancelled(true);
-							p.closeInventory();
+						Location loc = ((Chest) ih).getLocation();
+						p.teleport(loc.add(0.5f, 0, 0.5f));
+						loc.getBlock().setType(Material.AIR);
+						BasicCrates.SpawnBasicCrate2(p);
+						e.setCancelled(true);
+						p.closeInventory();
 
-							CrateGUI.map.put(p, "§4§lCrate2");
-							for (Player all : Bukkit.getOnlinePlayers()) {
-								all.closeInventory();
-							}
-							return;
+						CrateGUI.map.put(p, "§4§lCrate2");
+						for (Player all : Bukkit.getOnlinePlayers()) {
+							all.closeInventory();
 						}
+						return;
 					} else {
 						e.setCancelled(true);
 					}
@@ -114,22 +108,19 @@ public class CratesGUIClick implements Listener {
 							.getInt("crates." + p.getUniqueId() + ".BasicCrates") >= 1) {
 						;
 						InventoryHolder ih = OpenCratesGUI.ih3;
-						HubCore.getPlugin(HubCore.class).getLogger().info(ih.getClass().toString());
-						if (ih instanceof Chest) {
 
-							Location loc = ((Chest) ih).getLocation();
-							p.teleport(loc.add(0.5f, 0, 0.5f));
-							loc.getBlock().setType(Material.AIR);
-							BasicCrates.SpawnBasicCrate2(p);
-							e.setCancelled(true);
-							p.closeInventory();
+						Location loc = ((Chest) ih).getLocation();
+						p.teleport(loc.add(0.5f, 0, 0.5f));
+						loc.getBlock().setType(Material.AIR);
+						BasicCrates.SpawnBasicCrate2(p);
+						e.setCancelled(true);
+						p.closeInventory();
 
-							CrateGUI.map.put(p, "§4§lCrate3");
-							for (Player all : Bukkit.getOnlinePlayers()) {
-								all.closeInventory();
-							}
-							return;
+						CrateGUI.map.put(p, "§4§lCrate3");
+						for (Player all : Bukkit.getOnlinePlayers()) {
+							all.closeInventory();
 						}
+						return;
 					} else {
 						e.setCancelled(true);
 					}
@@ -153,22 +144,19 @@ public class CratesGUIClick implements Listener {
 							.getInt("crates." + p.getUniqueId() + ".BasicCrates") >= 1) {
 
 						InventoryHolder ih = OpenCratesGUI.ih4;
-						HubCore.getPlugin(HubCore.class).getLogger().info(ih.getClass().toString());
-						if (ih instanceof Chest) {
 
-							Location loc = ((Chest) ih).getLocation();
-							p.teleport(loc.add(0.5f, 0, 0.5f));
-							loc.getBlock().setType(Material.AIR);
-							BasicCrates.SpawnBasicCrate2(p);
-							e.setCancelled(true);
-							p.closeInventory();
+						Location loc = ((Chest) ih).getLocation();
+						p.teleport(loc.add(0.5f, 0, 0.5f));
+						loc.getBlock().setType(Material.AIR);
+						BasicCrates.SpawnBasicCrate2(p);
+						e.setCancelled(true);
+						p.closeInventory();
 
-							CrateGUI.map.put(p, "§4§lCrate4");
-							for (Player all : Bukkit.getOnlinePlayers()) {
-								all.closeInventory();
-							}
-							return;
+						CrateGUI.map.put(p, "§4§lCrate4");
+						for (Player all : Bukkit.getOnlinePlayers()) {
+							all.closeInventory();
 						}
+						return;
 					} else {
 						e.setCancelled(true);
 					}

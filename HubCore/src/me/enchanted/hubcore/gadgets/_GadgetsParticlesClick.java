@@ -5,19 +5,23 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
-public class _GadgetsMenuClick implements Listener {
+import me.enchanted.hubcore.particles._ParticleArrays_;
+
+public class _GadgetsParticlesClick implements Listener {
 
 	@EventHandler
 	public void onClick(InventoryClickEvent e)
 	{
-		if(e.getInventory().getName().equals("§bGadgets"))
+		if(e.getInventory().getName().equals("§a§lParticle Effects"))
 		{
-			if(e.getSlot() == 1)
+			if(e.getSlot() == 11)
 			{
 				e.setCancelled(true);
 				Player p = (Player) e.getWhoClicked();
-				p.closeInventory();
-				_GadgetsMenuParticles.openInv(p);
+				if(p.hasPermission("par.chrishat"))
+				{
+					_ParticleArrays_.cHT.add(p);
+				}
 			}
 			else
 			{

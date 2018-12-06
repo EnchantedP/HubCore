@@ -1,5 +1,6 @@
 package me.enchanted.hubcore.doublejump;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.GameMode;
 import org.bukkit.Particle;
@@ -14,7 +15,8 @@ public class DoubleJumpEvent implements Listener {
     @EventHandler
     public void onPlayerFly(PlayerToggleFlightEvent e) {
         Player p = e.getPlayer();
-        if (p.getGameMode() != GameMode.CREATIVE && p.getGameMode() != GameMode.SPECTATOR) {
+        
+        if (p.getGameMode() != GameMode.CREATIVE && p.getGameMode() != GameMode.SPECTATOR && FlyCommand.flying.contains(p)) {
             e.setCancelled(true);
             p.setAllowFlight(false);
             p.setFlying(false);

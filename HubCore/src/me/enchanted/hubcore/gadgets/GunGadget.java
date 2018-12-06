@@ -17,10 +17,8 @@ public class GunGadget implements Listener{
 		Player p = e.getPlayer();
 		if(p.getItemInHand().getType() == Material.GOLD_BARDING)
 		{
-			Snowball sb = p.getWorld().spawn(p.getLocation(), Snowball.class);
 			
-			Vector v = p.getLocation().getDirection();
-			sb.setVelocity(v.multiply(1.7)); 
+			p.launchProjectile(Snowball.class);
 			
 		}
 	}

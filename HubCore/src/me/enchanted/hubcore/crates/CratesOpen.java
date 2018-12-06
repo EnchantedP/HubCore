@@ -264,7 +264,7 @@ public class CratesOpen implements Listener {
 
 								}
 							}, 2L);
-				} else if (rndInt >= 4 && rndInt <= 60) {
+				} else if (rndInt >= 4 && rndInt <= 12) {
 					int rndPieces = rnd.nextInt(200) + 50;
 					List<String> lore = new ArrayList<>();
 
@@ -282,7 +282,6 @@ public class CratesOpen implements Listener {
 					item.setPickupDelay(Integer.MAX_VALUE);
 					item.setVelocity(new Vector(0, 0, 0));
 
-					
 					ArmorStand aS1 = p.getWorld()
 							.spawn(new Location(p.getWorld(), e.getClickedBlock().getLocation().getX() + 0.5,
 									e.getClickedBlock().getLocation().getY() - 0.9,
@@ -291,8 +290,7 @@ public class CratesOpen implements Listener {
 					aS1.setGravity(false);
 					aS1.setCustomName("§b" + rndPieces);
 					aS1.setCustomNameVisible(true);
-					
-					
+
 					ArmorStand aS2 = p.getWorld()
 							.spawn(new Location(p.getWorld(), e.getClickedBlock().getLocation().getX() + 0.5,
 									e.getClickedBlock().getLocation().getY() - 0.7,
@@ -301,15 +299,98 @@ public class CratesOpen implements Listener {
 					aS2.setGravity(false);
 					aS2.setCustomName("§9§lCrate Pieces");
 					aS2.setCustomNameVisible(true);
-					
-					
+
 					int cratePieces = HubCore.getPlugin(HubCore.class).getConfig()
 							.getInt("crates." + p.getUniqueId().toString() + ".cratePieces");
 					int newCratePieces = cratePieces + rndPieces;
 					HubCore.getPlugin(HubCore.class).getConfig()
 							.set("crates." + p.getUniqueId().toString() + ".cratePieces", newCratePieces);
 					HubCore.getPlugin(HubCore.class).saveConfig();
-				} else if (rndInt >= 61) {
+				} else if (rndInt >= 13 && rndInt <= 80) {
+					int rndPieces = rnd.nextInt(49) + 1;
+					List<String> lore = new ArrayList<>();
+
+					int rndLore = rnd.nextInt(10000) + 1;
+					lore.add("" + rndLore);
+
+					ItemStack is = new ItemStack(Material.MELON_BLOCK);
+					ItemMeta im = is.getItemMeta();
+					is.setAmount(1);
+					im.setLore(lore);
+
+					Item item = e.getClickedBlock().getWorld()
+							.dropItem(e.getClickedBlock().getLocation().add(0.5, 0, 0.5), is);
+					item.setGravity(false);
+					item.setPickupDelay(Integer.MAX_VALUE);
+					item.setVelocity(new Vector(0, 0, 0));
+
+					ArmorStand aS1 = p.getWorld()
+							.spawn(new Location(p.getWorld(), e.getClickedBlock().getLocation().getX() + 0.5,
+									e.getClickedBlock().getLocation().getY() - 0.9,
+									e.getClickedBlock().getLocation().getZ() + 0.5), ArmorStand.class);
+					aS1.setVisible(false);
+					aS1.setGravity(false);
+					aS1.setCustomName("§a" + rndPieces);
+					aS1.setCustomNameVisible(true);
+
+					ArmorStand aS2 = p.getWorld()
+							.spawn(new Location(p.getWorld(), e.getClickedBlock().getLocation().getX() + 0.5,
+									e.getClickedBlock().getLocation().getY() - 0.7,
+									e.getClickedBlock().getLocation().getZ() + 0.5), ArmorStand.class);
+					aS2.setVisible(false);
+					aS2.setGravity(false);
+					aS2.setCustomName("§2§lMelon Gadget");
+					aS2.setCustomNameVisible(true);
+					
+					int melonGadgets = HubCore.getPlugin(HubCore.class).getConfig()
+							.getInt("crates." + p.getUniqueId().toString() + ".melonGadget");
+					int newMelonGadgets = melonGadgets + rndPieces;
+					HubCore.getPlugin(HubCore.class).getConfig()
+							.set("crates." + p.getUniqueId().toString() + ".melonGadget", newMelonGadgets);
+					HubCore.getPlugin(HubCore.class).saveConfig();
+				} else if (rndInt >= 81) {
+					int rndPieces = rnd.nextInt(49) + 1;
+					List<String> lore = new ArrayList<>();
+
+					int rndLore = rnd.nextInt(10000) + 1;
+					lore.add("" + rndLore);
+
+					ItemStack is = new ItemStack(Material.TNT);
+					ItemMeta im = is.getItemMeta();
+					is.setAmount(1);
+					im.setLore(lore);
+
+					Item item = e.getClickedBlock().getWorld()
+							.dropItem(e.getClickedBlock().getLocation().add(0.5, 0, 0.5), is);
+					item.setGravity(false);
+					item.setPickupDelay(Integer.MAX_VALUE);
+					item.setVelocity(new Vector(0, 0, 0));
+
+					ArmorStand aS1 = p.getWorld()
+							.spawn(new Location(p.getWorld(), e.getClickedBlock().getLocation().getX() + 0.5,
+									e.getClickedBlock().getLocation().getY() - 0.9,
+									e.getClickedBlock().getLocation().getZ() + 0.5), ArmorStand.class);
+					aS1.setVisible(false);
+					aS1.setGravity(false);
+					aS1.setCustomName("§c" + rndPieces);
+					aS1.setCustomNameVisible(true);
+
+					ArmorStand aS2 = p.getWorld()
+							.spawn(new Location(p.getWorld(), e.getClickedBlock().getLocation().getX() + 0.5,
+									e.getClickedBlock().getLocation().getY() - 0.7,
+									e.getClickedBlock().getLocation().getZ() + 0.5), ArmorStand.class);
+					aS2.setVisible(false);
+					aS2.setGravity(false);
+					aS2.setCustomName("§4§lTNT Gadget");
+					aS2.setCustomNameVisible(true);
+					
+					int tntGadgets = HubCore.getPlugin(HubCore.class).getConfig()
+							.getInt("crates." + p.getUniqueId().toString() + ".tntGadget");
+					int newTNTGadgets = tntGadgets + rndPieces;
+					HubCore.getPlugin(HubCore.class).getConfig()
+							.set("crates." + p.getUniqueId().toString() + ".tntGadget", newTNTGadgets);
+					HubCore.getPlugin(HubCore.class).saveConfig();
+				} /*else if (rndInt >= 41) {
 					List<String> lore = new ArrayList<>();
 
 					int rndLore = rnd.nextInt(10000) + 1;
@@ -335,8 +416,8 @@ public class CratesOpen implements Listener {
 					aS.setCustomName("§8§lN§7§lo§8§lt§7§lh§8§li§7§ln§8§lg");
 					aS.setCustomNameVisible(true);
 
-				}
-				
+				}*/
+
 				e.setCancelled(true);
 
 				if (!CratesOpen.get(p).equals(1)) {
@@ -344,8 +425,6 @@ public class CratesOpen implements Listener {
 					int toAdd = 1;
 					int newCratesOpened = CratesOpen.get(p) - toAdd;
 					CratesOpen.put(p, newCratesOpened);
-
-					
 
 				}
 				if (CratesOpen.get(p).equals(1)) {
@@ -400,7 +479,21 @@ public class CratesOpen implements Listener {
 									 */;
 									BlockState bdata = block.getState();
 									Chest chest = (Chest) bdata;
-									chest.setCustomName(CrateGUI.map.get(p));
+									
+									
+									
+									
+									if (OpenCratesGUI.c.get(p) == 1) {
+										chest.setCustomName("§4§lCrate1");
+									} else if (OpenCratesGUI.c.get(p) == 2) {
+										chest.setCustomName("§4§lCrate2");
+									} else if (OpenCratesGUI.c.get(p) == 3) {
+										chest.setCustomName("§4§lCrate3");
+									} else if (OpenCratesGUI.c.get(p) == 4) {
+										chest.setCustomName("§4§lCrate4");
+									}
+									chest.update();
+									
 									p.teleport(p.getLocation().add(1, 0, 1));
 									CrateOpen.remove(p);
 									int BasicCrates = HubCore.getPlugin(HubCore.class).getConfig()

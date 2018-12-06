@@ -43,7 +43,16 @@ public class CratesLeave implements Listener {
 			Block block = p.getLocation().getBlock();
 			BlockState bdata = block.getState();
 			Chest chest = (Chest) bdata;
-			chest.setCustomName(CrateGUI.map.get(p));
+			if (OpenCratesGUI.c.get(p) == 1) {
+				chest.setCustomName("§4§lCrate1");
+			} else if (OpenCratesGUI.c.get(p) == 2) {
+				chest.setCustomName("§4§lCrate2");
+			} else if (OpenCratesGUI.c.get(p) == 3) {
+				chest.setCustomName("§4§lCrate3");
+			} else if (OpenCratesGUI.c.get(p) == 4) {
+				chest.setCustomName("§4§lCrate4");
+			}
+			chest.update();
 			
 			for (Entity en : p.getLocation().getWorld().getEntities()) {
 				if (p.getLocation().distance(en.getLocation()) <= 3) {

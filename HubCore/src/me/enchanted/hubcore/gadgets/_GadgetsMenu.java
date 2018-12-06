@@ -10,7 +10,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class _GadgetsMenu {
 
-	public void GadgetsInv(Player p){
+	public static void openInv(Player p){
 		Inventory inv = Bukkit.createInventory(null, 54, "§bGadgets");
 		ItemStack glassPane = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 3);	
 		ItemMeta glassPaneMeta = glassPane.getItemMeta();
@@ -26,6 +26,12 @@ public class _GadgetsMenu {
 		particleEffectMeta.setDisplayName("§a§bParticle Effects");
 		particleEffect.setItemMeta(particleEffectMeta);
 		inv.setItem(1, particleEffect);
+		
+		ItemStack gadgets = new ItemStack(Material.MELON_BLOCK, 1);
+		ItemMeta gadgetsM = particleEffect.getItemMeta();
+		gadgetsM.setDisplayName("§a§bGadgets");
+		gadgets.setItemMeta(gadgetsM);
+		inv.setItem(4, gadgets);
 		
 		p.openInventory(inv);
 	}

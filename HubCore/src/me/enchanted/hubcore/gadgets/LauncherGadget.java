@@ -17,7 +17,7 @@ public class LauncherGadget implements Listener{
 		Player p = e.getPlayer();
 		if(p.getItemInHand().getType() == Material.IRON_BARDING)
 		{
-			p.launchProjectile(Fireball.class);
+			p.launchProjectile(Fireball.class, p.getLocation().getDirection());
 		}
 	}
 	
@@ -27,7 +27,8 @@ public class LauncherGadget implements Listener{
 		if(e.getHitEntity() instanceof Player)
 		{
 			Player p = (Player) e.getHitEntity();
-			p.setVelocity(e.getEntity().getVelocity());
+			
+			p.setVelocity(e.getEntity().getVelocity().setY(1).multiply(1.8));
 		}
 	}
 }

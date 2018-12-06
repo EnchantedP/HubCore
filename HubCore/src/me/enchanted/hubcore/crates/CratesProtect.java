@@ -1,6 +1,7 @@
 package me.enchanted.hubcore.crates;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
@@ -18,19 +19,24 @@ public class CratesProtect {
 			@Override
 			public void run() {
 				if (CratesOpen.CrateOpen.contains(p)) {
-					for (Entity e : p.getLocation().getWorld().getEntities()) {
-						if (p.getLocation().distance(e.getLocation()) <= 3) {
-							if (e != p) {
-								if(e instanceof Item)
+					
+					for (Entity near : Bukkit.getOnlinePlayers()) {
+						if(near == p) return;
+						if (near.getLocation().distance(p.getLocation()) <= 5) {
+							Location nearloc = near.getLocation();
+							
+							Location eLoc = p.getLocation();
+							Location newLoc = nearloc.subtract(eLoc);
+							Vector newV = new Vector(newLoc.toVector().normalize().multiply(2.0).getX(), 1.75, newLoc.toVector().normalize().multiply(2.0).getZ());
+								if(near instanceof Item)
 								{
 									
 								}
 								else
 								{
-									e.setVelocity(new Vector(1,0.5,1));
+									near.setVelocity(newV);
 								}
 								
-							}
 						}
 					}
 				}

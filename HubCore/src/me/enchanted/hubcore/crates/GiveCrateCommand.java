@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Cow;
 import org.bukkit.entity.Creature;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -24,19 +25,13 @@ public class GiveCrateCommand implements CommandExecutor {
 		if(sender instanceof Player)
 		{
 			Player p = (Player) sender;
-			Creature cow = (Creature) Bukkit.getWorld("world").spawnEntity(p.getLocation(), EntityType.COW);
-			new BukkitRunnable() {
-				
-				@Override
-				public void run() {
-					
-					cow.setLeashHolder(p);
-					cow.getLeashHolder().
-					
-				}
-			}.runTaskTimer(HubCore.getPlugin(HubCore.class), 0, 1);
+			ItemStack gadgets = new ItemStack(Material.ENDER_CHEST, 1);
+			ItemMeta gadgetsM = gadgets.getItemMeta();
+			gadgetsM.setDisplayName("§b§lGadgets");
+			gadgets.setItemMeta(gadgetsM);
+			p.getInventory().setItem(4, gadgets);
 			
-			
+            
 			if(p.hasPermission("enchanted.givecrate"))
 			{
 				if(args.length != 1)
@@ -83,5 +78,29 @@ public class GiveCrateCommand implements CommandExecutor {
 		}
 		return true;
 	}
+	
+	//Make entity follow player.
+	/*@SuppressWarnings("deprecation")
+	public void followPlayer(Player player, LivingEntity entity, double d) {
+        final LivingEntity e = entity;
+        final Player p = player;
+        final float f = (float) d;
+        entity.setMaxHealth(2048);
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(HubCore.getPlugin(HubCore.class), new Runnable() {
+            @Override
+            public void run() {
+            	entity.setCollidable(false);
+    			
+    			entity.setHealth(2048);
+            	double dis = entity.getLocation().distance(p.getLocation());
+                if(dis >= 9)
+                {
+                	entity.teleport(p);
+                }
+                ((EntityInsentient) ((CraftEntity) e).getHandle()).getNavigation().a(p.getLocation().getX(), p.getLocation().getY(), p.getLocation().getZ(), f);
+            }
+        }, 0 * 20, 1);
+    }*/
+	
 
 }

@@ -18,12 +18,24 @@ import me.enchanted.hubcore.crates.GiveCrateCommand;
 import me.enchanted.hubcore.crates.OpenCratesGUI;
 import me.enchanted.hubcore.customchat.CustomChatEvent;
 import me.enchanted.hubcore.doublejump.DoubleJumpEvent;
+import me.enchanted.hubcore.doublejump.FlyCommand;
 import me.enchanted.hubcore.doublejump.JumpEvent;
 import me.enchanted.hubcore.gadgets._GadgetsClick;
+import me.enchanted.hubcore.gadgets._GadgetsJoin;
+import me.enchanted.hubcore.gadgets._GadgetsMenuClick;
+import me.enchanted.hubcore.gadgets._GadgetsParticlesClick;
 import me.enchanted.hubcore.gadgets.AirPearlsGadget;
+import me.enchanted.hubcore.gadgets.GunGadget;
+import me.enchanted.hubcore.gadgets.LauncherGadget;
+import me.enchanted.hubcore.gadgets.MelonGadget;
 import me.enchanted.hubcore.gadgets.TNTGadgets;
 import me.enchanted.hubcore.gadgets.TNTGadgetsExplode;
+import me.enchanted.hubcore.gadgets._GadgetsActionBar_;
 import me.enchanted.hubcore.gadgets._GadgetsTimeLeft;
+import me.enchanted.hubcore.particles._FreeParticleJoin;
+import me.enchanted.hubcore.particles._ParticleArrays_;
+import me.enchanted.hubcore.particles._ParticlesLeave;
+import me.enchanted.hubcore.particles._RegisterParticles;
 import me.enchanted.hubcore.stats.ScoreboardJoinEvent;
 import me.enchanted.hubcore.stats.ScoreboardUpdate;
 
@@ -33,19 +45,23 @@ public class HubCore extends JavaPlugin implements Listener {
 		Bukkit.getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
 		for (Player p : Bukkit.getOnlinePlayers()) {
 			CratesProtect.crateForcefield(p);
+			FlyCommand.flying.add(p);
 		}
 		registerScoreboard();
 		registerCommands();
 		registerListeners();
 		registerTimeLeft();
 		DailyRewards();
+		_RegisterParticles.redgisterParticles();
+		_GadgetsActionBar_.start();
 		saveDefaultConfig(); 
 		
 	}
-
+	
 	private void registerTimeLeft() {
 		_GadgetsTimeLeft.tntTime();
-		
+		_GadgetsTimeLeft.melonTime();
+		_GadgetsTimeLeft.despawnItems();
 	}
 
 	public void registerScoreboard()
@@ -55,7 +71,8 @@ public class HubCore extends JavaPlugin implements Listener {
 	}
 	
 	public void registerCommands() {
-		getCommand("test").setExecutor(new GiveCrateCommand());
+		getCommand("givecrate").setExecutor(new GiveCrateCommand());
+		getCommand("fly").setExecutor(new FlyCommand());
 	}
 
 	public void registerListeners() {
@@ -65,6 +82,11 @@ public class HubCore extends JavaPlugin implements Listener {
 		getServer().getPluginManager().registerEvents(new JumpEvent(), this);
 		getServer().getPluginManager().registerEvents(new DoubleJumpEvent(), this);
 		getServer().getPluginManager().registerEvents(new _GadgetsClick(), this);
+		getServer().getPluginManager().registerEvents(new _GadgetsMenuClick(), this);
+		getServer().getPluginManager().registerEvents(new _GadgetsParticlesClick(), this);
+		getServer().getPluginManager().registerEvents(new _GadgetsJoin(), this);
+		getServer().getPluginManager().registerEvents(new _FreeParticleJoin(), this);
+		getServer().getPluginManager().registerEvents(new _ParticlesLeave(), this);
 		getServer().getPluginManager().registerEvents(new CratesJoin(), this);
 		getServer().getPluginManager().registerEvents(new OpenCratesGUI(), this);
 		getServer().getPluginManager().registerEvents(new CratesGUIClick(), this);
@@ -73,6 +95,9 @@ public class HubCore extends JavaPlugin implements Listener {
 		getServer().getPluginManager().registerEvents(new TNTGadgets(), this);
 		getServer().getPluginManager().registerEvents(new TNTGadgetsExplode(), this);
 		getServer().getPluginManager().registerEvents(new AirPearlsGadget(), this);
+		getServer().getPluginManager().registerEvents(new GunGadget(), this);
+		getServer().getPluginManager().registerEvents(new LauncherGadget(), this);
+		getServer().getPluginManager().registerEvents(new MelonGadget(), this);
 	}
 
 	@SuppressWarnings("deprecation")

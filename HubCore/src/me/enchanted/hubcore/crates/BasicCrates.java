@@ -3,6 +3,7 @@ package me.enchanted.hubcore.crates;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.BlockState;
@@ -127,7 +128,7 @@ public class BasicCrates {
 						loc8.setYaw(armorStand8.getLocation().getYaw() + 30);
 						loc8.setY(loc8.getY() - 0.1);
 						armorStand8.teleport(loc8);
-
+						
 						i1++;
 
 						if (i1 >= 35) {
@@ -137,8 +138,8 @@ public class BasicCrates {
 
 							armorStand2.remove();
 
-							loc2.add(0, 2, 0).getBlock().setType(Material.CHEST);
-
+							loc2.add(0, 2, 0).getBlock().setType(Material.CHEST); p.playSound(p.getLocation(), Sound.ENTITY_BLAZE_HURT, 100, 1);
+							p.playSound(p.getLocation(), Sound.ENTITY_BLAZE_HURT, 100, 1);
 							armorStand3.remove();
 							Block Chest3 = loc3.add(0, 2, 0).getBlock();
 							Chest3.setType(Material.CHEST);
@@ -305,7 +306,7 @@ public class BasicCrates {
 							loc1.add(0, 2, 0).getBlock().setType(Material.CHEST);
 
 							armorStand2.remove();
-							loc2.add(0, 2, 0).getBlock().setType(Material.CHEST);
+							loc2.add(0, 2, 0).getBlock().setType(Material.CHEST); p.playSound(p.getLocation(), Sound.ENTITY_BLAZE_HURT, 100, 1);
 
 							armorStand3.remove();
 							Block Chest3 = loc3.add(0, 2, 0).getBlock();
@@ -473,7 +474,7 @@ public class BasicCrates {
 							loc1.add(0, 2, 0).getBlock().setType(Material.CHEST);
 
 							armorStand2.remove();
-							loc2.add(0, 2, 0).getBlock().setType(Material.CHEST);
+							loc2.add(0, 2, 0).getBlock().setType(Material.CHEST); p.playSound(p.getLocation(), Sound.ENTITY_BLAZE_HURT, 100, 1);
 
 							armorStand3.remove();
 							Block Chest3 = loc3.add(0, 2, 0).getBlock();
@@ -641,7 +642,7 @@ public class BasicCrates {
 							loc1.add(0, 2, 0).getBlock().setType(Material.CHEST);
 
 							armorStand2.remove();
-							loc2.add(0, 2, 0).getBlock().setType(Material.CHEST);
+							loc2.add(0, 2, 0).getBlock().setType(Material.CHEST); p.playSound(p.getLocation(), Sound.ENTITY_BLAZE_HURT, 100, 1);
 
 							armorStand3.remove();
 							Block Chest3 = loc3.add(0, 2, 0).getBlock();

@@ -7,8 +7,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 public class _GadgetsClick implements Listener {
 	
-	public _GadgetsMenu gm = new _GadgetsMenu();
-	
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onGadgetsClick(PlayerInteractEvent e)
@@ -17,7 +15,7 @@ public class _GadgetsClick implements Listener {
 		if(!p.getItemInHand().hasItemMeta()) return;
 		if(!p.getItemInHand().getItemMeta().hasDisplayName()) return;
 		if(!p.getItemInHand().getItemMeta().getDisplayName().equals("§b§lGadgets")) return;
-		gm.GadgetsInv(p);
+		_GadgetsMenu.openInv(p);
 	}
 
 }

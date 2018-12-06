@@ -2,15 +2,10 @@ package me.enchanted.hubcore.particles;
 
 import org.bukkit.Location;
 import org.bukkit.Particle;
-import org.bukkit.craftbukkit.v1_12_R1.entity.CraftGuardian;
-import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
-import org.bukkit.entity.Guardian;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import me.enchanted.hubcore.HubCore;
-import net.minecraft.server.v1_12_R1.EntityGuardian;
-import net.minecraft.server.v1_12_R1.EntityPlayer;
 
 public class GreenHelix {
 
