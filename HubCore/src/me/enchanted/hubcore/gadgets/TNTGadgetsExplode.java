@@ -19,6 +19,7 @@ public class TNTGadgetsExplode implements Listener {
 		if(e.getEntity() instanceof TNTPrimed)
 		{
 			e.setCancelled(true);
+			
 			for (Entity near : Bukkit.getOnlinePlayers()) {
 				if (near.getLocation().distance(e.getEntity().getLocation()) <= 5) {
 					Location nearloc = near.getLocation();

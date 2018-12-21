@@ -1,5 +1,8 @@
 package me.enchanted.hubcore.gadgets;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Item;
@@ -14,7 +17,7 @@ public class _GadgetsMenuParticles {
 		Inventory inv = Bukkit.createInventory(null, 54, "§a§lParticle Effects");
 		ItemStack glassPane = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 3);	
 		ItemMeta glassPaneMeta = glassPane.getItemMeta();
-		glassPaneMeta.setDisplayName("");
+		glassPaneMeta.setDisplayName("§7");
 		glassPane.setItemMeta(glassPaneMeta);
 		
 		
@@ -67,9 +70,24 @@ public class _GadgetsMenuParticles {
 		cHE.setItemMeta(cHEM);
 		inv.setItem(11, cHE);
 		
-		ItemStack mE = new ItemStack(Material.NOTE_BLOCK, 1);
-		ItemMeta mEM = mE.getItemMeta();
-		mEM.setDisplayName("§c§lMusical");
+		ItemStack mE = null;
+		ItemMeta mEM = null;
+		List<String> lore = new ArrayList<>();
+		lore.add("§7");
+		lore.add("§7Can Be Found In The Basic Crate.");
+		if(p.hasPermission("par.musical"))
+		{
+			mE = new ItemStack(Material.NOTE_BLOCK, 1);
+			mEM = mE.getItemMeta();
+			mEM.setDisplayName("§c§lMusical");
+		}
+		else
+		{
+			mE = new ItemStack(Material.INK_SACK, 1, (byte) 8);
+			mEM = mE.getItemMeta();
+			mEM.setDisplayName("§c§l???");
+			mEM.setLore(lore);
+		}
 		mE.setItemMeta(mEM);
 		inv.setItem(12, mE);
 		
@@ -78,6 +96,12 @@ public class _GadgetsMenuParticles {
 		lM.setDisplayName("§6§lLava Helix");
 		l.setItemMeta(lM);
 		inv.setItem(13, l);
+		
+		ItemStack disE = new ItemStack(Material.BARRIER, 1);
+		ItemMeta disEM = disE.getItemMeta();
+		disEM.setDisplayName("§4§lDisable Effect");
+		disE.setItemMeta(disEM);
+		inv.setItem(49, disE);
 		
 		p.openInventory(inv);
 	}

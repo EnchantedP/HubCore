@@ -5,9 +5,14 @@ import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.material.Skull;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import me.enchanted.hubcore.HubCore;
 
@@ -38,14 +43,19 @@ public class ChristmasHat {
 					}
 				}
 			}
-		}, 1L, 1L);
+		}, 4L, 4L);
 	}
 
+	
+	
 	public static void white(Location loc) {
+		
 		loc.getWorld().spawnParticle(Particle.REDSTONE, loc, 0, 1, 1, 1, 1);
 	}
 
+	@SuppressWarnings("deprecation")
 	public static void red(Location loc) {
+		
 		loc.getWorld().spawnParticle(Particle.REDSTONE, loc, 0, 1, 0, 0, 1);
 	}
 }

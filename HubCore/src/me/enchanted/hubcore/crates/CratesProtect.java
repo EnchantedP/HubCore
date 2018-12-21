@@ -19,24 +19,12 @@ public class CratesProtect {
 			@Override
 			public void run() {
 				if (CratesOpen.CrateOpen.contains(p)) {
-					
-					for (Entity near : Bukkit.getOnlinePlayers()) {
-						if(near == p) return;
-						if (near.getLocation().distance(p.getLocation()) <= 5) {
-							Location nearloc = near.getLocation();
-							
-							Location eLoc = p.getLocation();
-							Location newLoc = nearloc.subtract(eLoc);
-							Vector newV = new Vector(newLoc.toVector().normalize().multiply(2.0).getX(), 1.75, newLoc.toVector().normalize().multiply(2.0).getZ());
-								if(near instanceof Item)
-								{
-									
-								}
-								else
-								{
-									near.setVelocity(newV);
-								}
-								
+
+					for(Player near : Bukkit.getOnlinePlayers()) {
+						if(near.getLocation().distance(p.getLocation()) <= 1.5) {
+							if(p != near) {
+								near.setVelocity(near.getLocation().getDirection().multiply(-10).setY(2));
+							}
 						}
 					}
 				}

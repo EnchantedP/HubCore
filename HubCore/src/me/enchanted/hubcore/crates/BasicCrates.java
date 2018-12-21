@@ -617,7 +617,7 @@ public class BasicCrates {
 						Location loc5 = armorStand5.getLocation();
 						loc5.setYaw(armorStand5.getLocation().getYaw() + 30);
 						loc5.setY(loc5.getY() - 0.1);
-						armorStand5.teleport(loc5);
+						armorStand5.teleport(loc5); 
 
 						Location loc6 = armorStand6.getLocation();
 						loc6.setYaw(armorStand6.getLocation().getYaw() + 30);

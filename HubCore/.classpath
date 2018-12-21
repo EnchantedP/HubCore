@@ -16,6 +16,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="A:/Hub/plugins/Essentials-2.x-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Enchanted/Documents/spigot.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Enchanted/Downloads/Essentials-2.x-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
